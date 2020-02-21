@@ -1,4 +1,5 @@
-﻿	var datas = [
+
+	var datas = [
 		{	
 			name : "鬥牛犬",
 			recipe : {
