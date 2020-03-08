@@ -1,5 +1,5 @@
-<html>
-<head> 
+﻿<html>
+<head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
@@ -152,6 +152,11 @@
 		$("#headerFunctionList").find("li > a").on('click',function(){
 			$(".listBlock").hide();
 			$(".listBlock."+$(this).attr("block")).show();
+			var title = $(this).text();
+			if ( $(this).attr("block") == "rasipy" && $("#cocktailName").text() != "" ){
+				title += "：" + $("#cocktailName").text();
+			}
+			document.title = title;
 		});
 		
 		//崁入清除名稱過濾按鈕
