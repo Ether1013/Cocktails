@@ -234,7 +234,7 @@
 							newA.attr( "href", "#" );
 							newA.click({sourceName:sourceName},function(event){
 								//只有點擊到前面的[X]才執行材料過濾
-								if ( event.pageX - event.target.offsetLeft <= 48 ){
+								if ( event.target == $(this) && event.pageX - event.target.offsetLeft <= 48 ){
 									$(this).hide("slow",function(){
 										var sourceBtn = $(".source-btn[value="+event.data.sourceName+"]");
 										while( !sourceBtn.isForbiddenSource() ){
