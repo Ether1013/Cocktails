@@ -227,6 +227,7 @@
 							newSpan.text( capacity );
 							
 							var newA = $(document.createElement("a"));
+							newA.addClass( "resouceList" );
 							newA.addClass( "ui-btn" );
 							newA.addClass( "ui-btn-icon-left" );
 							newA.addClass( "ui-icon-delete" );
@@ -234,7 +235,7 @@
 							newA.attr( "href", "#" );
 							newA.click({sourceName:sourceName},function(event){
 								//只有點擊到前面的[X]才執行材料過濾
-								if ( event.target == $(this) && event.pageX - event.target.offsetLeft <= 48 ){
+								if ( $(event.target).hasClass("resouceList") && event.pageX - event.target.offsetLeft <= 48 ){
 									$(this).hide("slow",function(){
 										var sourceBtn = $(".source-btn[value="+event.data.sourceName+"]");
 										while( !sourceBtn.isForbiddenSource() ){
